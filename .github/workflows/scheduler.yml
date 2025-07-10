@@ -1,0 +1,13 @@
+name: Cron Test
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Every minute
+  workflow_dispatch:       # Allow manual run
+
+jobs:
+  print-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print time
+        run: date -u
